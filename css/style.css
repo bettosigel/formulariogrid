@@ -1,0 +1,123 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   width: 100%;
+   height: 100vh;
+   background: background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);;
+   font-family: 'Roboto', sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.grid-container {
+   width: 90%;
+   max-width: 1400px;
+   height: 90%;
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   grid-template-areas: "image image formulario";
+   background: #ffffff;
+}
+
+.contenedor-image {
+   grid-area: image;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: #f2f2f2;
+}
+
+img {
+   width: 60%;
+}
+
+.contenedor-form {
+   grid-area: formulario;
+   align-self: center;
+   text-align: center;
+}
+
+.contacto {
+   font-weight: 300;
+}
+
+.group-input {
+   position: relative;
+   width: 90%;
+   margin: 40px auto 0 auto;
+}
+
+input {
+   font-family: inherit;
+}
+
+.input {
+   font-family: inherit;
+   display: inline-block;
+   width: 100%;
+   background: none;
+   outline: none;
+   border: none;
+   border-bottom: 1px solid #c0bbbb;
+   padding: 3px 0 10px 30px;
+}
+
+.icono {
+   position: absolute;
+   left: 0;
+   bottom: 10px;
+   font-size: 20px;
+   color: #6c63ff;
+}
+
+.submit {
+   display: inline-block;
+   margin-top: 40px;
+   color: #ffffff;
+   border: none;
+   outline: none;
+   padding: 15px 20px;
+   background: #6c63ff;
+   cursor: pointer;
+   border-radius: 5px;
+   transition: transform .4s;
+}
+
+.submit:hover {
+   transform: scale(1.1);
+}
+
+@media screen and (max-width: 800px) {
+   .grid-container {
+      grid-template-areas: "image formulario formulario";
+   }
+   img {
+      width: 80%;
+   }
+}
+
+@media screen and (max-width: 600px) {
+   body {
+      height: 650px;
+   }
+   .grid-container {
+      grid-template-rows: repeat(4,1fr);
+      grid-template-areas: "image image image"
+      "formulario formulario formulario"
+      "formulario formulario formulario"
+      "formulario formulario formulario";
+      height: 95%;
+   }
+   img {
+      width: 200px;
+   }
+   .contenedor-image {
+      padding: 30px 0;
+   }
+}
